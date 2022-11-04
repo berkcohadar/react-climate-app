@@ -1,0 +1,21 @@
+/* GLOBAL VARIABLES */
+$arbol-green: #59AE54;
+$color-light: #FFFFFF;
+$color-gray: #828282;
+$color-dark: #3C3C3C;
+$color-red: #EA5F44;
+
+/* IMPORTS */
+@import "./components/Layout/Body/body";
+@import "./components/Layout/Header/header";
+@import "./components/Layout/Footer/footer";
+@import "./components/Shared/Button/button";
+@import "./components/Shared/Table/table";
+
+
+/* GLOBAL STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

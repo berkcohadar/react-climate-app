@@ -1,0 +1,26 @@
+.main-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    .header-logo{
+        height: 50px;
+        img {
+            height: 50px;
+        }
+    }
+
+    .header-items{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px;
+        .header-item {
+            font-size: 18px;
+            color: $color-gray;
+            &.active {
+                color: $color-dark;
+            }
+        }
+    }
+}

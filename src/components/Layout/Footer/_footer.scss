@@ -1,0 +1,30 @@
+.main-footer{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 60px 20px;
+    background-color: $color-dark;
+    .footer-logo{
+        width: 120px;
+        height: 100px;
+        img {
+            height: 100px;
+        }
+    }
+
+    .footer-items{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 120px;
+        .footer-item {
+            font-size: 18px;
+            color: $color-light;
+        }
+    }
+}
