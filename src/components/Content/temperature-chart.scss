@@ -1,0 +1,67 @@
+.charts-grid{
+    width: 100%;
+    height: max-content;
+    display: grid;
+    grid-gap: 50px 50px;
+    grid-template-columns: repeat(3, 1fr);
+
+    .temperature-chart{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-start;
+        padding: 60px 40px;
+        background-color: lighten($color-dark, 7%);
+        border-radius: 8px;
+        width: calc(100% - 100px);
+        margin: auto;
+
+        .chart-title{
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        align-self: center;
+        margin: auto;
+        gap:10px;
+        .chart-title-image{
+            width: 45px;
+            height: 20px;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #D14545 0%, #f57a00 50%, #FF9933 100%);
+        }
+
+        .chart-title-text{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            align-self: center;
+            height: 25px;
+            font-size: 16px;
+        }
+
+        }
+    }
+    @media (max-width: 1600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 992px) {
+        grid-gap: 30px 20px;
+        grid-template-columns: repeat(1, 1fr);
+        .temperature-chart {
+            gap: 20px;
+            padding: 30px 60px;
+            width: calc(100% - 120px);
+        }
+    }
+    @media (max-width: 768px) {
+        grid-gap: 30px 20px;
+        grid-template-columns: repeat(1, 1fr);
+        .temperature-chart {
+            padding: 20px 10px;
+            width: calc(100% - 20px);
+        }
+    }
+}

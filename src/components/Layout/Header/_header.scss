@@ -23,4 +23,12 @@
             }
         }
     }
+    @media (max-width: 992px) {
+        .header-items{
+            display: none;
+        }
+        .header-logo{
+            margin: auto;
+        }
+    }
 }

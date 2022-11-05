@@ -1,20 +1,14 @@
 import Header from "./components/Layout/Header";
 import Body from "./components/Layout/Body";
-
-import token from "./utils/token";
 import Footer from "./components/Layout/Footer";
-import ButtonSuccess from "./components/Shared/Button/ButtonSuccess";
-import Table from "./components/Shared/Table";
+import Content from "./components/Content";
 
 function App() {
-  const climateAPIKey = token.token;
-
   return (
     <div className="App">
       <Header />
-      <Body>
-        <Table/>
-        <ButtonSuccess content="Submit"/>
+      <Body title="Australia Climate Charts">
+        <Content/>
       </Body>
       <Footer />
     </div>
