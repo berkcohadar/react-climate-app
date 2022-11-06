@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <Body title="Australia Climate Charts">
+      <Body>
         <Content/>
       </Body>
       <Footer />

@@ -27,31 +27,30 @@ const months = [
     'December'
 ]
 
-
 // date => "YYYY-MM-DD"
 // period =>
 //     1: "Last month",
 //     6: "Last 6 months",
 //     12: "Last 12 months"
-export const calculateMonthlyAverage = (exp, location, date, period) => {
-    const tempDate = new Date(date);
+export const calculateMonthlyAverage = (exp, location, period) => {
+    const tempDate = new Date("2022-11-01");
+
+    const results = {
+        labels: [],
+        datasets: [
+            {
+                label: "",
+                data: [],
+            },
+        ]
+    }
+
     switch (exp) {
         case "avgMonthlyMaxTemp":
-            var results = {
-                labels: [],
-                datasets: [
-                    {
-                        label:"Average Temperature",
-                        data: [],
-                    },
-                ]
-            }
-
             for (let step = 0; step < period; step++) {
                 tempDate.setDate(0);
                 var total = 0;
                 var days = 0;
-                var result = {}
                 while (tempDate.getDate() != 1) {
                     tempDate.setDate(tempDate.getDate() - 1);
                     var tempDateString = tempDate.toISOString().split('T')[0];
@@ -68,10 +67,44 @@ export const calculateMonthlyAverage = (exp, location, date, period) => {
             return results;
 
         case "avgMonthlyMinTemp":
-            return;
+            for (let step = 0; step < period; step++) {
+                tempDate.setDate(0);
+                var total = 0;
+                var days = 0;
+                while (tempDate.getDate() != 1) {
+                    tempDate.setDate(tempDate.getDate() - 1);
+                    var tempDateString = tempDate.toISOString().split('T')[0];
+                    var degree = MinTempData[location].data[tempDateString]
+                    if (degree) {
+                        total += Number(degree.split(" ")[0]);
+                        days += 1;
+                    }
+                }
+                results.labels.push(months[tempDate.getMonth()]);
+                results.datasets[0].data.push((total / days).toFixed(2))
+            }
+
+            return results;
 
         case "avgMonthlyGustSpeed":
-            return;
+            for (let step = 0; step < period; step++) {
+                tempDate.setDate(0);
+                var total = 0;
+                var days = 0;
+                while (tempDate.getDate() != 1) {
+                    tempDate.setDate(tempDate.getDate() - 1);
+                    var tempDateString = tempDate.toISOString().split('T')[0];
+                    var degree = GustSpeedData[location].data[tempDateString]
+                    if (degree) {
+                        total += Number(degree.split(" ")[0]);
+                        days += 1;
+                    }
+                }
+                results.labels.push(months[tempDate.getMonth()]);
+                results.datasets[0].data.push((total / days).toFixed(2))
+            }
+
+            return results;
 
         case "avgMonthlyGustDirection":
             return;
