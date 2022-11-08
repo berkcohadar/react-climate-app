@@ -16,7 +16,7 @@ export default function Content() {
             <ChartsHeader city={city} setCity={setCity} title="Australia Climate Charts" />
             <div className="charts-grid">
                 {datas.map((dataType, index) => (
-                    <BarContent title={"Monthly Average Temperature"} dataType={dataType} city={city} period={period} index={index} />
+                    <BarContent dataType={dataType} city={city} period={period} index={index} />
                 ))}
             </div>
         </>

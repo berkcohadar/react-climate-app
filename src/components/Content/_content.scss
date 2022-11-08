@@ -10,7 +10,7 @@
         flex-flow: row wrap;
         justify-content: flex-start;
         padding: 60px 40px;
-        background-color: lighten($color-dark, 7%);
+        background-color: $color-dark-2;
         border-radius: 8px;
         width: calc(100% - 100px);
         margin: auto;
@@ -28,7 +28,7 @@
             width: 45px;
             height: 20px;
             border-radius: 12px;
-            background: linear-gradient(90deg, #D14545 0%, #f57a00 50%, #FF9933 100%);
+            background: linear-gradient(90deg, #087EE1 0%, #04d0a7 50%, #05E8BA 100%);
         }
 
         .chart-title-text{

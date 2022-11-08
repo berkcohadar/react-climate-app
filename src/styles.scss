@@ -1,9 +1,11 @@
 /* GLOBAL VARIABLES */
-$arbol-green: #59AE54;
 $color-light: #FFFFFF;
-$color-gray: #828282;
-$color-dark: #3C3C3C;
-$color-red: #EA5F44;
+$color-dark: #080d1f;
+$color-dark-1: lighten($color-dark, 2%);
+$color-dark-2: lighten($color-dark, 20%);
+$color-dark-3: lighten($color-dark, 30%);
+$color-contrast: #2aab45;
+$main-gradient: linear-gradient(to right, $color-dark, $color-dark-2);
 
 /* IMPORTS */
 @import "./components/Layout/Body/body";

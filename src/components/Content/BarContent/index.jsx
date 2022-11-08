@@ -2,9 +2,16 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Chart as ChartJS } from 'chart.js/auto';
 import { Bar } from 'react-chartjs-2';
 import { calculateMonthlyAverage } from "../utils/calculations";
-import createGradient, { options } from "../utils/chartStyling";
+import { createGradientFire, createGradientOcean, options } from "../utils/chartStyling";
 
-export default function BarContent({ title, dataType, city, period }) {
+export default function BarContent({ dataType, city, period }) {
+    const titles = {
+        "avgMonthlyMaxTemp" : "Monthly Average TMAX",
+        "avgMonthlyMinTemp" : "Monthly Average TMIN",
+        "avgMonthlyGustSpeed" : "Monthly Average Gust Speed",
+        "avgMonthlyGustDirection" : "Monthly Average Gust Direction"
+    }
+    const title = titles[dataType]
     const chartRef = useRef(null);
     const data = useMemo(() => calculateMonthlyAverage(dataType, city, period), [city, period]);
 
@@ -15,7 +22,7 @@ export default function BarContent({ title, dataType, city, period }) {
             return;
         }
 
-        data.datasets[0].backgroundColor = createGradient(chartRefCurrent.ctx, chartRefCurrent.chartArea);
+        data.datasets[0].backgroundColor = createGradientOcean(chartRefCurrent.ctx, chartRefCurrent.chartArea);
         data.datasets[0].borderRadius = 100;
         data.datasets[0].barPercentage = .35;
 

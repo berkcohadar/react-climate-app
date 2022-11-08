@@ -3,6 +3,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 40px;
+    background: darken($color-dark, 10%);
     .header-logo{
         height: 50px;
         img {
@@ -17,9 +18,12 @@
         gap: 40px;
         .header-item {
             font-size: 18px;
-            color: $color-gray;
+            color: darken($color-light, 30%);
             &.active {
-                color: $color-dark;
+                color: $color-light;
+            }
+            &:hover {
+                color: $color-light;
             }
         }
     }

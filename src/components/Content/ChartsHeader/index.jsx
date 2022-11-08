@@ -1,22 +1,76 @@
 import React, { useState } from 'react'
 import Select from "react-select"
-export default function ChartsHeader({ title, city, setCity }) {
 
+export default function ChartsHeader({ title, city, setCity }) {
   const cities = [
-    "Amberley",
-    "Albany Airport",
-    "Bendigo",
-    "Bridgetown",
-    "Camden",
-    "Cerberus",
-    "Edinburgh",
-    "Gosford"
-  ]
+    {
+      label: "Amberley",
+      value: "Amberley",
+    },
+    {
+      label: "Albany Airport",
+      value: "Albany-Airport",
+    },
+    {
+      label: "Bendigo",
+      value: "Bendigo",
+    },
+    {
+      label: "Bridgetown",
+      value: "Bridgetown",
+    },
+    {
+      label: "Camden",
+      value: "Camden",
+    },
+    {
+      label: "Cerberus",
+      value: "Cerberus",
+    },
+    {
+      label: "Edinburgh",
+      value: "Edinburgh",
+    },
+    {
+      label: "Gosford",
+      value: "Gosford",
+    },
+  ];
+
+  const customStyles = {
+    option: (provided, state) => ({
+      ...provided,
+      backgroundColor: 'transparent',
+      borderBottom: '1px solid rgba(255, 255, 255, 0.3)',
+      color: '#fff',
+      textAlign: "start",
+      fontSize:"20px",
+      cursor:"pointer",
+      "&:hover": {
+        backgroundColor: "#1d2f70"
+      }
+    }),
+    control: (provided, state) => ({
+      ...provided,
+      backgroundColor: 'transparent',
+      width: "250px",
+    }),
+    singleValue: (provided, state) => ({
+      ...provided,
+      color: "#ffffff",
+      fontSize:"20px",
+      textAlign: "start",
+    }),
+    menu: (provided, state) => ({
+      ...provided,
+      backgroundColor: '#080d1f',
+      border: '1px solid rgba(255, 255, 255, 0.3)',
+    }),
+
+  }
 
   const handleChange = (e) => {
-    e.preventDefault();
-    console.log(e.target)
-    setCity(e.target.current);
+    setCity(e.label);
   }
 
   return (
@@ -25,11 +79,16 @@ export default function ChartsHeader({ title, city, setCity }) {
         <span>{title}</span>
       </div>
       <div className='main-body-select-field'>
-        <Select className="main-body-select"
-          value={city}
-          options={cities}
-          isSearchable={true}
-          onChange={(e) => handleChange(e)} />
+      <Select
+        defaultValue={cities[0]}
+        isClearable={true}
+        isSearchable={true}
+        name="color"
+        options={cities}
+        placeholder="Albany"
+        styles={customStyles}
+        onChange={(e) => handleChange(e)}
+      />
       </div>
     </div>
   )
