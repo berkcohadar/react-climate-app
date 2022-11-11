@@ -2,16 +2,23 @@ import Header from "./components/Layout/Header";
 import Body from "./components/Layout/Body";
 import Footer from "./components/Layout/Footer";
 import Content from "./components/Content";
+import { ThemeContext } from "./utils/ThemeContext";
+import { useEffect, useState } from "react";
+import styles from "./styles.scss"
 
 function App() {
+  const [theme, setTheme] = useState(false);
+  console.log(theme);
   return (
-    <div className="App">
-      <Header />
-      <Body>
-        <Content/>
-      </Body>
-      <Footer />
-    </div>
+    <ThemeContext.Provider value={theme}>
+      <div className={theme ? "App" : "App dark"}>
+        <Header setTheme={setTheme}/>
+        <Body>
+          <Content/>
+        </Body>
+        <Footer />
+      </div>
+    </ThemeContext.Provider>
   );
 }
 

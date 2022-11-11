@@ -1,10 +1,11 @@
 import React from "react";
+import logo from "../../../assets/logo/logo.png"
 
 export default function Footer() {
   return (
     <div className="main-footer">
       <div className="footer-logo">
-        <img src="https://www.arbolmarket.com/wp-content/uploads/2020/12/arbow_grayonly.png"></img>
+        <img src={logo}></img>
       </div>
       <div className="footer-items">
         <div className="footer-item">

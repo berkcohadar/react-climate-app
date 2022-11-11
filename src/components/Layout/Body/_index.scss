@@ -1,7 +1,7 @@
 .main-body{
     padding: 40px;
-    background-color: $color-dark-1;
-
+    background: rgba(#fff, 0.25);
+    min-height: calc(100vh - 380px);
     * {
         color: $color-light;
     }

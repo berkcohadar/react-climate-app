@@ -2,14 +2,19 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
-    bottom: 0;
     padding: 60px 20px;
-    background-color: $color-dark;
+    margin-top: auto;
+
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 -5px 20px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    
     .footer-logo{
         width: 120px;
-        height: 100px;
+        height: 60px;
         img {
-            height: 100px;
+            height: 60px;
         }
     }
 
@@ -23,6 +28,15 @@
         .footer-item {
             font-size: 18px;
             color: $color-light;
+        }
+    }
+
+    @media (max-width: 992px) {
+        .footer-logo {
+            height: 35px;
+            img {
+                height: 35px;
+            }
         }
     }
 }

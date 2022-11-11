@@ -8,7 +8,8 @@ export default function Content() {
     const datas = [
         "avgMonthlyMaxTemp",
         "avgMonthlyMinTemp",
-        "avgMonthlyGustSpeed"
+        "avgMonthlyGustSpeed",
+        "avgMonthlyGustDirection"
     ]
 
     return (

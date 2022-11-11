@@ -1,22 +1,29 @@
 import React from 'react'
+import logo from "../../../assets/logo/logo.png"
+import ThemeToggler from './ThemeToggler'
 
-export default function Header() {
-  return (
-    <div className='main-header'>
-        <div className='header-logo'>
-            <img src="https://www.arbolmarket.com/wp-content/uploads/2020/11/arbollogo.png"/>
+export default function Header({ setTheme }) {
+    return (
+        <div className='main-header'>
+            <div className='header-logo'>
+                <img src={logo} />
+            </div>
+            <div className='header-extra'>
+                <div className='header-items'>
+                    <div className='header-item active'>
+                        <span>Australia</span>
+                    </div>
+                    <div className='header-item'>
+                        <span>Texas</span>
+                    </div>
+                    <div className='header-item'>
+                        <span>Finland</span>
+                    </div>
+                </div>
+                <div className='header-theme-toggle'>
+                    <ThemeToggler setTheme={setTheme}/>
+                </div>
+            </div>
         </div>
-        <div className='header-items'>
-            <div className='header-item active'>
-                <span>Home</span>
-            </div>
-            <div className='header-item'>
-                <span>Climate</span>
-            </div>
-            <div className='header-item'>
-                <span>API</span>
-            </div>
-        </div>
-    </div>
-  )
+    )
 }

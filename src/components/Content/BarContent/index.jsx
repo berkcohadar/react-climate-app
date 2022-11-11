@@ -1,19 +1,17 @@
-import React, { useEffect, useMemo, useRef, useState } from "react";
+import React, { useContext, useEffect, useMemo, useRef } from "react";
 import { Chart as ChartJS } from 'chart.js/auto';
-import { Bar } from 'react-chartjs-2';
-import { calculateMonthlyAverage } from "../utils/calculations";
-import { createGradientFire, createGradientOcean, options } from "../utils/chartStyling";
+import { Bar, Radar } from 'react-chartjs-2';
+import { calculateMonthlyAverage } from "./utils/calculations";
+import { titles, descriptions, options, optionsDark, createGradientDark, optionsDir, optionsDarkDir } from "./utils/chartStyling";
+import { ThemeContext } from "../../../utils/ThemeContext";
 
 export default function BarContent({ dataType, city, period }) {
-    const titles = {
-        "avgMonthlyMaxTemp" : "Monthly Average TMAX",
-        "avgMonthlyMinTemp" : "Monthly Average TMIN",
-        "avgMonthlyGustSpeed" : "Monthly Average Gust Speed",
-        "avgMonthlyGustDirection" : "Monthly Average Gust Direction"
-    }
     const title = titles[dataType]
+    const description = descriptions[dataType]
+
     const chartRef = useRef(null);
     const data = useMemo(() => calculateMonthlyAverage(dataType, city, period), [city, period]);
+    const theme = useContext(ThemeContext);
 
     useEffect(() => {
         const chartRefCurrent = chartRef.current;
@@ -21,8 +19,7 @@ export default function BarContent({ dataType, city, period }) {
         if (!chartRefCurrent) {
             return;
         }
-
-        data.datasets[0].backgroundColor = createGradientOcean(chartRefCurrent.ctx, chartRefCurrent.chartArea);
+        data.datasets[0].backgroundColor = createGradientDark(chartRefCurrent.ctx, chartRefCurrent.chartArea);
         data.datasets[0].borderRadius = 100;
         data.datasets[0].barPercentage = .35;
 
@@ -34,9 +31,17 @@ export default function BarContent({ dataType, city, period }) {
                 <span className="chart-title-image"></span>
                 <span className="chart-title-text">{title}</span>
             </div>
-            <div style={{ minHeight: "300px", width: "100%" }}>
-                <Bar ref={chartRef} options={options} data={data} />
+            <div className="chart-title">
+                <span className="chart-title-description">{description}</span>
             </div>
+            <div style={{ minHeight: "400px", width: "100%" }}>
+                {dataType === "avgMonthlyGustDirection" ?
+                    <Radar ref={chartRef} options={theme ? optionsDir : optionsDarkDir} data={data} />
+                    :
+                    <Bar ref={chartRef} options={theme ? options : optionsDark} data={data} />
+                }
+            </div>
+
         </div>
     )
 }
