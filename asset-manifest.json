@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/react-climate-app/static/css/main.c0088201.css",
+    "main.js": "/react-climate-app/static/js/main.01b2ce20.js",
+    "static/media/logo.png": "/react-climate-app/static/media/logo.a1fb0679df8923249af5.png",
+    "index.html": "/react-climate-app/index.html",
+    "main.c0088201.css.map": "/react-climate-app/static/css/main.c0088201.css.map",
+    "main.01b2ce20.js.map": "/react-climate-app/static/js/main.01b2ce20.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c0088201.css",
+    "static/js/main.01b2ce20.js"
+  ]
+}
