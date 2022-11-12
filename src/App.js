@@ -8,7 +8,6 @@ import styles from "./styles.scss"
 
 function App() {
   const [theme, setTheme] = useState(false);
-  console.log(theme);
   return (
     <ThemeContext.Provider value={theme}>
       <div className={theme ? "App" : "App dark"}>
@@ -28,6 +27,7 @@ export default App;
 
 The idea is that data API can provide an easy access point to any data,
 and we can make it better for one of the datasets with your help.
+
 Let's for example take the Australia Station dataset, there are quite a few stations.
 Can you make a very simple UI, which would give a user some visual information about this dataset? 
 

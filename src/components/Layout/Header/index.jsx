@@ -14,10 +14,10 @@ export default function Header({ setTheme }) {
                         <span>Australia</span>
                     </div>
                     <div className='header-item'>
-                        <span>Texas</span>
+                        <span>Japan</span>
                     </div>
                     <div className='header-item'>
-                        <span>Finland</span>
+                        <span>Dutch</span>
                     </div>
                 </div>
                 <div className='header-theme-toggle'>

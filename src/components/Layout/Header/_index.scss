@@ -34,6 +34,8 @@
                 transition: all .2s ease-in-out;
                 font-size: 18px;
                 color: darken($color-light, 30%);
+                text-shadow: 0 0.5px 2px $color-dark;
+                letter-spacing: .5px;
 
                 &.active {
                     color: $color-light;
@@ -84,7 +86,7 @@
     .label {
         width: 48px;
         height: 24px;
-        background-color: $color-dark-2;
+        background-color: $color-dark-1;
         display: flex;
         border-radius: 50px;
         align-items: center;

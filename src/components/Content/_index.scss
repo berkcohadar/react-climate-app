@@ -7,7 +7,7 @@
 
     .temperature-chart{
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: column wrap;
         justify-content: flex-start;
         padding: 60px 40px;
 
@@ -48,12 +48,14 @@
                 font-size: 20px;
                 letter-spacing: 0.5px;
                 color: $color-light;
-                text-shadow: 0 0 3px $color-dark;
+                text-shadow: 0 .5px 2px $color-dark;
             }
             
             .chart-title-description{
                 padding: 0 20px;
-                font-size: 14px;
+                font-size: 16px;
+                letter-spacing: 0.4px;
+                text-shadow: 0 .5px 2px $color-dark;
             }
 
         }
