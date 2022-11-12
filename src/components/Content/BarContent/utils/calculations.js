@@ -1,16 +1,7 @@
-/*
-Start => 2021-02-01
-End => 2022-10-30
-*/
-
-// use useMemo. Calculate again WHEN month is changed.
-// Chart => Last month - Last 6 months - Last 12 months
 import GustDirectionData from "../../../../assets/static/aus-gustdir.json"
 import GustSpeedData from "../../../../assets/static/aus-gustspeed.json"
 import MaxTempData from "../../../../assets/static/aus-temp-max.json"
 import MinTempData from "../../../../assets/static/aus-temp-min.json"
-
-const DATE_FORMAT = "YYYY-MM-DD"
 
 const months = [
     'January',
@@ -27,11 +18,6 @@ const months = [
     'December'
 ]
 
-// date => "YYYY-MM-DD"
-// period =>
-//     1: "Last month",
-//     6: "Last 6 months",
-//     12: "Last 12 months"
 export const calculateMonthlyAverage = (exp, location, period) => {
     const tempDate = new Date("2022-11-01");
 
@@ -41,6 +27,8 @@ export const calculateMonthlyAverage = (exp, location, period) => {
             {
                 label: "",
                 data: [],
+                borderRadius: 100,
+                barPercentage: .35
             },
         ]
     }
@@ -132,3 +120,8 @@ export const calculateMonthlyAverage = (exp, location, period) => {
             return;
     }
 }
+// date => "YYYY-MM-DD"
+// period =>
+//     1: "Last month",
+//     6: "Last 6 months",
+//     12: "Last 12 months"
