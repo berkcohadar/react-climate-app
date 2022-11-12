@@ -23,7 +23,7 @@ export default function BarContent({ dataType, city, period }) {
         data.datasets[0].borderRadius = 100;
         data.datasets[0].barPercentage = .35;
 
-    }, [data]);
+    }, [data, chartRef.current]);
 
     return (
         <div className="temperature-chart">

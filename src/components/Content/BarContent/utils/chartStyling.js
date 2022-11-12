@@ -15,6 +15,7 @@ export function createGradientFire(ctx, area) {
 
     return gradient;
 }
+
 export function createGradientDark(ctx, area) {
     const color1 = "#1d2f70";
     const color3 = "#3251c1";
@@ -48,6 +49,7 @@ export function createGradientOcean(ctx, area) {
 
     return gradient;
 }
+
 export const optionsDir = {
     responsive: true,
     maintainAspectRatio: false,
@@ -79,6 +81,7 @@ export const optionsDir = {
     }
 
 }
+
 export const optionsDarkDir = {
     responsive: true,
     maintainAspectRatio: false,
