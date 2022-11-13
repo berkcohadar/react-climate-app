@@ -1,23 +1,13 @@
 /* GLOBAL VARIABLES */
 $color-light: #FFFFFF;
-$color-dark: #080d1f; //
-$color-dark-1: lighten($color-dark, 2%); //
-$color-dark-2: lighten($color-dark, 20%); //
-$color-dark-3: lighten($color-dark, 40%);
-$color-dark-4: lighten($color-dark, 50%);
+$color-dark: #080d1f;
+$color-dark-1: lighten($color-dark, 2%);
 
-$color-contrast: #2aab45;
+$light-gradient: radial-gradient(ellipse at left, lighten($color-dark, 40%), transparent),
+    radial-gradient(ellipse at right, lighten($color-dark, 40%), transparent);
 
-// $light-gradient: radial-gradient(ellipse at left, #0771ca, transparent),
-//                 radial-gradient(ellipse at left, #087EE1, transparent),
-//                 radial-gradient(ellipse at right, #05E8BA, transparent),
-//                 radial-gradient(ellipse at right, #0ef9ca, transparent);
-
-$light-gradient: radial-gradient(ellipse at left, $color-dark-3, transparent),
-                radial-gradient(ellipse at right, $color-dark-3, transparent);
-
-$dark-gradient: radial-gradient(ellipse at left, $color-dark, $color-dark-2),
-                radial-gradient(ellipse at right, $color-dark, $color-dark-2);
+$dark-gradient: radial-gradient(ellipse at left, $color-dark, lighten($color-dark, 20%)),
+    radial-gradient(ellipse at right, $color-dark, lighten($color-dark, 20%));
 
 /* IMPORTS */
 @import "./components/Layout/Body/index";
@@ -31,48 +21,54 @@ $dark-gradient: radial-gradient(ellipse at left, $color-dark, $color-dark-2),
     margin: 0;
     padding: 0;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    transition: background-color .3s ease ;
+    transition: background-color .3s ease;
     box-sizing: border-box;
 }
 
 .App {
     display: flex;
     flex-direction: column;
-    flex:1 0;
+    flex: 1 0;
     min-height: 100vh;
     background: $light-gradient;
-    &.dark {
-        background: $dark-gradient;
+}
 
-        .main-header{
-            background: rgba( 255, 255, 255, 0.02 );
-            box-shadow: 0 0px 40px rgba( $color-dark-1, 0.5 );
+/* DARK THEME */
+.dark {
+    background: $dark-gradient;
 
-            .header-items .header-item {
-                color: darken($color-light, 30%);
-                &.active, &:hover {
-                    color: $color-light;
-                }
-            }
-        }
+    .main-header {
+        background: rgba(255, 255, 255, 0.02);
+        box-shadow: 0 0px 40px rgba($color-dark-1, 0.5);
 
-        .main-body{
-            background-color: transparent;
-        }
+        .header-items .header-item {
+            color: darken($color-light, 30%);
 
-        .main-footer{
-            background: rgba( 255, 255, 255, 0.02 );
-            box-shadow: 0 0px 40px rgba( $color-dark-1, 0.5 );
-
-            .footer-items .footer-item {
+            &.active,
+            &:hover {
                 color: $color-light;
             }
         }
-        .temperature-chart {
-            background-color: $color-dark-2;
-            .chart-title .chart-title-text{
-                color: $color-light;
-            }
+    }
+
+    .main-body {
+        background-color: transparent;
+    }
+
+    .main-footer {
+        background: rgba(255, 255, 255, 0.02);
+        box-shadow: 0 0px 40px rgba($color-dark-1, 0.5);
+
+        .footer-items .footer-item {
+            color: $color-light;
+        }
+    }
+
+    .temperature-chart {
+        background-color: lighten($color-dark, 20%);
+
+        .chart-title .chart-title-text {
+            color: $color-light;
         }
     }
 }
