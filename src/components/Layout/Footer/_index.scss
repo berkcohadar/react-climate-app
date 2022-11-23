@@ -25,9 +25,10 @@
         align-items: center;
         gap: 20px;
         width: 120px;
-        .footer-item {
+        .footer-item a{
             font-size: 18px;
             color: $color-light;
+            text-decoration: none;
         }
     }
 

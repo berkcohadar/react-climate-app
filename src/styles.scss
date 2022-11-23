@@ -58,10 +58,6 @@ $dark-gradient: radial-gradient(ellipse at left, $color-dark, lighten($color-dar
     .main-footer {
         background: rgba(255, 255, 255, 0.02);
         box-shadow: 0 0px 40px rgba($color-dark-1, 0.5);
-
-        .footer-items .footer-item {
-            color: $color-light;
-        }
     }
 
     .temperature-chart {

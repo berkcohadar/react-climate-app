@@ -9,13 +9,13 @@ export default function Footer() {
       </div>
       <div className="footer-items">
         <div className="footer-item">
-          <span>Home</span>
+          <a href="/" ><span> Home</span></a>
         </div>
         <div className="footer-item">
-          <span>Climate</span>
+          <a href="https://www.arbol.io/" target="_blank">Arbol</a>
         </div>
         <div className="footer-item">
-          <span>API</span>
+          <a href="https://api.dclimate.net/" target="_blank">Climate API</a>
         </div>
       </div>
     </div>
