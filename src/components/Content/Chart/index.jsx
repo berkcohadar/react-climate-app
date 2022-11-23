@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useMemo, useRef } from "react";
 import { Chart as ChartJS } from 'chart.js/auto';
 import { Bar, Line, Radar } from 'react-chartjs-2';
 import { calculateMonthlyAverage } from "components/Content/Charts/utils/calculations";
-import { titles, descriptions, options, optionsDark, plugins, optionsDir, optionsDarkDir } from "../utils/chartStyling";
+import { titles, descriptions, options, optionsDark, plugins, optionsDir, optionsDarkDir } from "../Charts/utils/chartStyling";
 import { ThemeContext } from "utils/ThemeContext";
 
 export default function Chart({ dataType, city, period }) {

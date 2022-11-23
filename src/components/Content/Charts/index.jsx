@@ -1,5 +1,5 @@
 import React from 'react'
-import Chart from "./Chart";
+import Chart from "components/Content/Chart";
 
 export default function Charts({ city, period }) {
     const datas = [
