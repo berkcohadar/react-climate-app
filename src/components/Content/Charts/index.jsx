@@ -6,7 +6,7 @@ export default function Charts({ city, period }) {
         "avgMonthlyMaxTemp",
         "avgMonthlyMinTemp",
         "avgMonthlyGustSpeed",
-        "avgMonthlyGustDirection"
+        "totalDaysGustDirection"
     ]
     return (
         <div className="charts-grid">

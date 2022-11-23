@@ -23,7 +23,7 @@ export default function Chart({ dataType, city, period }) {
                 <span className="chart-title-description">{description}</span>
             </div>
             <div style={{ minHeight: "400px", width: "100%" }}>
-                {dataType === "avgMonthlyGustDirection" ?
+                {dataType === "totalDaysGustDirection" ?
                     <Radar id="canvas" ref={chartRef} plugins={plugins} options={theme ? optionsDir : optionsDarkDir} data={data} />
                     : dataType === "avgMonthlyGustSpeed" ? 
                     <Line id="canvas" ref={chartRef} plugins={plugins} options={theme ? options : optionsDark} data={data} />

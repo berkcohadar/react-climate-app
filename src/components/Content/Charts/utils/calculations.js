@@ -99,7 +99,7 @@ export const calculateMonthlyAverage = (exp, location, period) => {
             results.datasets[0]["borderColor"] = '#3251c1';
             return results;
 
-        case "avgMonthlyGustDirection":
+        case "totalDaysGustDirection":
             var directions = {}
             for (let step = 0; step < period; step++) {
                 tempDate.setDate(0);

@@ -152,12 +152,12 @@ export const titles = {
     "avgMonthlyMaxTemp": "Monthly Average TMAX",
     "avgMonthlyMinTemp": "Monthly Average TMIN",
     "avgMonthlyGustSpeed": "Monthly Average Gust Speed",
-    "avgMonthlyGustDirection": "Weighted Gust Direction"
+    "totalDaysGustDirection": "Weighted Gust Direction"
 }
 
 export const descriptions = {
     "avgMonthlyMaxTemp": "Average of maximum daily temperatures by month (°C)",
     "avgMonthlyMinTemp": "Average of minimum daily temperatures by month (°C)",
     "avgMonthlyGustSpeed": "Average daily gust speeds by month (km/h)",
-    "avgMonthlyGustDirection": "Weights of gust directions"
+    "totalDaysGustDirection": "Weights of gust directions"
 }
