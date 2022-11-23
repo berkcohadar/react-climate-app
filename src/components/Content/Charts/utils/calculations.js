@@ -20,7 +20,6 @@ const months = [
 
 export const calculateMonthlyAverage = (exp, location, period) => {
     const tempDate = new Date("2022-11-01");
-
     const results = {
         labels: [],
         datasets: [
@@ -32,13 +31,13 @@ export const calculateMonthlyAverage = (exp, location, period) => {
             },
         ]
     }
+    var total = 0;
+    var days = 0;
 
     switch (exp) {
         case "avgMonthlyMaxTemp":
             for (let step = 0; step < period; step++) {
                 tempDate.setDate(0);
-                var total = 0;
-                var days = 0;
                 while (tempDate.getDate() != 1) {
                     tempDate.setDate(tempDate.getDate() - 1);
                     var tempDateString = tempDate.toISOString().split('T')[0];
@@ -51,14 +50,13 @@ export const calculateMonthlyAverage = (exp, location, period) => {
                 results.labels.push(months[tempDate.getMonth()]);
                 results.datasets[0].data.push((total / days).toFixed(2))
             }
-
+            results.labels.reverse()
+            results.datasets[0].data.reverse()
             return results;
 
         case "avgMonthlyMinTemp":
             for (let step = 0; step < period; step++) {
                 tempDate.setDate(0);
-                var total = 0;
-                var days = 0;
                 while (tempDate.getDate() != 1) {
                     tempDate.setDate(tempDate.getDate() - 1);
                     var tempDateString = tempDate.toISOString().split('T')[0];
@@ -71,14 +69,13 @@ export const calculateMonthlyAverage = (exp, location, period) => {
                 results.labels.push(months[tempDate.getMonth()]);
                 results.datasets[0].data.push((total / days).toFixed(2))
             }
-
+            results.labels.reverse()
+            results.datasets[0].data.reverse()
             return results;
 
         case "avgMonthlyGustSpeed":
             for (let step = 0; step < period; step++) {
                 tempDate.setDate(0);
-                var total = 0;
-                var days = 0;
                 while (tempDate.getDate() != 1) {
                     tempDate.setDate(tempDate.getDate() - 1);
                     var tempDateString = tempDate.toISOString().split('T')[0];
@@ -91,15 +88,15 @@ export const calculateMonthlyAverage = (exp, location, period) => {
                 results.labels.push(months[tempDate.getMonth()]);
                 results.datasets[0].data.push((total / days).toFixed(2))
             }
-
+            results.labels.reverse()
+            results.datasets[0].data.reverse()
+            results.datasets[0]["borderColor"] = '#3251c1';
             return results;
 
         case "avgMonthlyGustDirection":
             var directions = {}
             for (let step = 0; step < period; step++) {
                 tempDate.setDate(0);
-                var total = 0;
-                var days = 0;
                 while (tempDate.getDate() != 1) {
                     tempDate.setDate(tempDate.getDate() - 1);
                     var tempDateString = tempDate.toISOString().split('T')[0];
@@ -112,16 +109,15 @@ export const calculateMonthlyAverage = (exp, location, period) => {
                     }
                 }
             }
-            results.labels = Object.keys(directions);
-            results.datasets[0].data = Object.values(directions);
+            
+            results.labels = ["N", "NNE", "NE", "ENE", "E", "ESE", "SE", "SSE", "S", "SSW", "SW", "WSW", "W", "WNW", "NW", "NNW"];
+            results.datasets[0].data = results.labels.map(item => {
+                if (directions[item]) return directions[item]
+                return 0;
+            });
             return results;
 
         default:
             return;
     }
 }
-// date => "YYYY-MM-DD"
-// period =>
-//     1: "Last month",
-//     6: "Last 6 months",
-//     12: "Last 12 months"

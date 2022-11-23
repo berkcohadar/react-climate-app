@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useMemo, useRef } from "react";
 import { Chart as ChartJS } from 'chart.js/auto';
-import { Bar, Radar } from 'react-chartjs-2';
+import { Bar, Line, Radar } from 'react-chartjs-2';
 import { calculateMonthlyAverage } from "components/Content/Charts/utils/calculations";
 import { titles, descriptions, options, optionsDark, plugins, optionsDir, optionsDarkDir } from "../utils/chartStyling";
 import { ThemeContext } from "utils/ThemeContext";
@@ -25,6 +25,8 @@ export default function Chart({ dataType, city, period }) {
             <div style={{ minHeight: "400px", width: "100%" }}>
                 {dataType === "avgMonthlyGustDirection" ?
                     <Radar id="canvas" ref={chartRef} plugins={plugins} options={theme ? optionsDir : optionsDarkDir} data={data} />
+                    : dataType === "avgMonthlyGustSpeed" ? 
+                    <Line id="canvas" ref={chartRef} plugins={plugins} options={theme ? options : optionsDark} data={data} />
                     :
                     <Bar id="canvas" ref={chartRef} plugins={plugins} options={theme ? options : optionsDark} data={data} />
                 }
