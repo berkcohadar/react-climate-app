@@ -38,6 +38,8 @@ export const calculateMonthlyAverage = (exp, location, period) => {
         case "avgMonthlyMaxTemp":
             for (let step = 0; step < period; step++) {
                 tempDate.setDate(0);
+                total = 0;
+                days = 0;
                 while (tempDate.getDate() != 1) {
                     tempDate.setDate(tempDate.getDate() - 1);
                     var tempDateString = tempDate.toISOString().split('T')[0];
@@ -57,6 +59,8 @@ export const calculateMonthlyAverage = (exp, location, period) => {
         case "avgMonthlyMinTemp":
             for (let step = 0; step < period; step++) {
                 tempDate.setDate(0);
+                total = 0;
+                days = 0;
                 while (tempDate.getDate() != 1) {
                     tempDate.setDate(tempDate.getDate() - 1);
                     var tempDateString = tempDate.toISOString().split('T')[0];
@@ -76,6 +80,8 @@ export const calculateMonthlyAverage = (exp, location, period) => {
         case "avgMonthlyGustSpeed":
             for (let step = 0; step < period; step++) {
                 tempDate.setDate(0);
+                total = 0;
+                days = 0;
                 while (tempDate.getDate() != 1) {
                     tempDate.setDate(tempDate.getDate() - 1);
                     var tempDateString = tempDate.toISOString().split('T')[0];
