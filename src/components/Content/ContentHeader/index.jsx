@@ -2,10 +2,13 @@ import React from 'react'
 import Select from "react-select"
 import { cities, periods, customStyles } from './utils/chartsHeaderStyles';
 
-export default function ContentHeader({ title, setCity, setPeriod }) {
+export default function ContentHeader({ setCity, setPeriod }) {
+  const title="Australia Climate Charts";
+
   const handleChangeCity = (e) => {
     setCity(e.label);
   }
+  
   const handleChangePeriod = (e) => {
     setPeriod(e.value);
   }

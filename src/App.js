@@ -18,7 +18,7 @@ function App() {
       <div className={theme ? "App" : "App dark"}>
         <Header setTheme={setTheme} />
         <Body>
-          <ContentHeader city={city} setCity={setCity} setPeriod={setPeriod} title="Australia Climate Charts" />
+          <ContentHeader setCity={setCity} setPeriod={setPeriod} />
           <Charts city={city} period={period} />
         </Body>
         <Footer />
