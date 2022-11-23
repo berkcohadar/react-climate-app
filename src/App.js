@@ -1,19 +1,25 @@
-import Header from "./components/Layout/Header";
-import Body from "./components/Layout/Body";
-import Footer from "./components/Layout/Footer";
-import Content from "./components/Content";
-import { ThemeContext } from "./utils/ThemeContext";
-import { useEffect, useState } from "react";
-import styles from "./styles.scss"
+import React, { useState } from "react";
+import { ThemeContext } from "utils/ThemeContext";
+import "./styles.scss"
+
+import Header from "components/Layout/Header";
+import Body from "components/Layout/Body";
+import ContentHeader from "components/Content/ContentHeader";
+import Charts from "components/Content/Charts";
+import Footer from "components/Layout/Footer";
 
 function App() {
   const [theme, setTheme] = useState(false);
+  const [city, setCity] = useState("Amberley");
+  const [period, setPeriod] = useState(4);
+
   return (
     <ThemeContext.Provider value={theme}>
       <div className={theme ? "App" : "App dark"}>
-        <Header setTheme={setTheme}/>
+        <Header setTheme={setTheme} />
         <Body>
-          <Content/>
+          <ContentHeader city={city} setCity={setCity} setPeriod={setPeriod} title="Australia Climate Charts" />
+          <Charts city={city} period={period} />
         </Body>
         <Footer />
       </div>

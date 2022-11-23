@@ -33,6 +33,21 @@ export const cities = [
     },
 ];
 
+export const periods = [
+    {
+        label: "Last 4 Months",
+        value: 4,
+    },
+    {
+        label: "Last 6 Months",
+        value: 6,
+    },
+    {
+        label: "Last 12 Months",
+        value: 12,
+    },
+];
+
 export const customStyles = {
     option: (provided, state) => ({
         ...provided,
@@ -75,5 +90,9 @@ export const customStyles = {
         backgroundColor: "#fff",
         fontSize: "20px",
         textAlign: "start",
+    }),
+    input : (provided, state) => ({
+        ...provided,
+        color: "#fff"
     }),
 }

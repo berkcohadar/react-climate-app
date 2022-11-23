@@ -1,7 +1,7 @@
-import GustDirectionData from "../../../../assets/static/aus-gustdir.json"
-import GustSpeedData from "../../../../assets/static/aus-gustspeed.json"
-import MaxTempData from "../../../../assets/static/aus-temp-max.json"
-import MinTempData from "../../../../assets/static/aus-temp-min.json"
+import GustDirectionData from "assets/static/aus-gustdir.json"
+import GustSpeedData from "assets/static/aus-gustspeed.json"
+import MaxTempData from "assets/static/aus-temp-max.json"
+import MinTempData from "assets/static/aus-temp-min.json"
 
 const months = [
     'January',

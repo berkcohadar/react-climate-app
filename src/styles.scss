@@ -13,8 +13,8 @@ $dark-gradient: radial-gradient(ellipse at left, $color-dark, lighten($color-dar
 @import "./components/Layout/Body/index";
 @import "./components/Layout/Header/index";
 @import "./components/Layout/Footer/index";
-@import "./components/Content/index";
-@import "./components/Content/ChartsHeader/index";
+@import "./components/Content/Charts/index";
+@import "./components/Content/ContentHeader/index";
 
 /* GLOBAL STYLES */
 * {

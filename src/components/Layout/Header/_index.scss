@@ -22,12 +22,14 @@
         justify-content: center;
         align-items: center;
         gap: 40px;
+        height: 24px;
 
         .header-items {
             display: flex;
             justify-content: center;
             align-items: center;
             gap: 40px;
+            height: 100%;
 
             .header-item {
                 cursor: pointer;
@@ -93,7 +95,7 @@
         justify-content: space-between;
         padding: 5px;
         position: relative;
-        transform: scale(1.5);
+        transform: scale(1.25);
     }
 
     .ball {

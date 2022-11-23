@@ -34,9 +34,13 @@
         }
         .main-body-select-field{
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            gap:10px;
+            gap:20px;
+            span {
+                display: none;
+            }
         }
     }
 }
