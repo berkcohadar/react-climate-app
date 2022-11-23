@@ -9,7 +9,7 @@ export default function Footer() {
       </div>
       <div className="footer-items">
         <div className="footer-item">
-          <a href="/" ><span> Home</span></a>
+          <a href="/" > Home</a>
         </div>
         <div className="footer-item">
           <a href="https://www.arbol.io/" target="_blank">Arbol</a>
